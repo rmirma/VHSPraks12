@@ -78,10 +78,10 @@ def raamatu_lisamine():
 
 
 # Azure Blob konfiguratsioon
-blob_connection_string = os.getenv('AZURE_BLOB_CONNECTION_STRING')
+blob_connection_string = os.getenv('APPSETTING_AzureWebJobsStorage')
 blob_service_client = BlobServiceClient.from_connection_string(blob_connection_string)
 
-blob_container_name = "mirmahs8praks"
+blob_container_name = os.getenv('APPSETTING_blob_container_name')
 
 if __name__ == '__main__':
     app.run(debug=True)
